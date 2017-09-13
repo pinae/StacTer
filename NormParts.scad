@@ -37,6 +37,19 @@ module pulley20teeth(inner_d) {
     }
 }
 
+module pulley60teeth(inner_d) {
+    color("Silver") render(convexity=4) {
+        difference() {
+            union() {
+                cylinder(d=45, h=8, $fn=res);
+                cylinder(d=42, h=15.95, $fn=res);
+                translate([0, 0, 15]) cylinder(d=45, h=0.95, $fn=res);
+            }
+            translate([0, 0, -1]) cylinder(d=inner_d, h=15.95+2, $fn=res);
+        }
+    }
+}
+
 module jhead_hotend() {
     color("Silver") render(convexity=6) {
         cylinder(h=12.77, d=12, $fn=res);
@@ -100,5 +113,33 @@ module ballbearing608() {
     color("Silver") render(convexity=4) difference() {
         cylinder(d=22, h=7, $fn=res);
         translate([0, 0, -1]) cylinder(d=8, h=9, $fn=res);
+    }
+}
+
+module fan40mm() {
+    color("DarkGray") render(convexity=6) difference() {
+        union() {
+            for(i=[-1, 1]) {
+                translate([0, 0, 5]) rotate([0, 0, i*45+45]) cube([50-8, 50, 10], center=true);
+                for(j=[-1, 1]) {
+                    translate([i*(25-4), j*(25-4), 0]) cylinder(d=8, h=10, $fn=res);
+                }
+            }
+        }
+        for(i=[-1, 1]) {
+            for(j=[-1, 1]) {
+                translate([i*20, j*20, -1]) cylinder(d=4.3, h=12, $fn=res);
+            }
+        }
+        difference() {
+            translate([0, 0, -1]) cylinder(d=48, h=12, $fn=res);
+            cylinder(d=25, h=10, $fn=res);
+            for(i=[0:8]) {
+                rotate([0, 0, i*45]) translate([5, -5, 0.7]) rotate([-60, 0, 0]) cube([19, 0.5, 15]);
+            }
+            for(i=[-1, 1]) {
+                translate([i*22/2, i*25/2, 10-1.5/2]) cube([3, 25, 1.5], center=true);
+            }
+        }
     }
 }
