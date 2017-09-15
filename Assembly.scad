@@ -5,22 +5,22 @@ use <Slider.scad>
 use <Bearing_holders.scad>
 res = 64;
 
-head_pos_x = 80;
-head_pos_y = 70;
+head_pos_x = 220;
+head_pos_y = 220;
 
-translate([head_pos_x+4, 0, 0]) alu_fitting();
-translate([0+head_pos_x, 0, 0]) rotate([0, 90, 0]) igidur8mm();
-translate([4+head_pos_x, 0, 6]) rod_fitting_lower();
-translate([4+head_pos_x, 0, 6]) rod_fitting_upper();
-translate([-68.5, 0, 0]) rotate([0, 90, 0]) color("Silver") cylinder(d=8, h=350, $fn=res);
+translate([head_pos_x+4+27, 0, 0]) alu_fitting();
+translate([27+head_pos_x, 0, 0]) rotate([0, 90, 0]) igidur8mm();
+translate([4+27+head_pos_x, 0, 6]) rod_fitting_lower();
+translate([4+27+head_pos_x, 0, 6]) rod_fitting_upper();
+translate([-68.5, 0, 0]) rotate([0, 90, 0]) color("Silver") cylinder(d=8, h=400, $fn=res);
 translate([-39, 0, 0]) rotate([0, 90, 0]) ballbearing608();
 translate([-31, 0, 0]) rotate([0, 90, 0]) pulley20teeth(8);
-translate([-19, -20, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=8, h=350, $fn=res);
+translate([-19, -20, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=8, h=400, $fn=res);
 translate([-19, -20, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([-19, -12, 18]) rotate([0, 90, 90]) pulley20teeth(8);
-translate([4+head_pos_x, -20+11, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=5, h=300, $fn=res);
-translate([-39+11, 15+head_pos_y, 0]) rotate([90, 0, 90]) color("Silver") cylinder(d=5, h=300, $fn=res);
-translate([14, 26, -61.5]) heatbed();
+translate([4+27+head_pos_x, -20+11, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=5, h=350, $fn=res);
+translate([-39+11, 15+52+head_pos_y, 0]) rotate([90, 0, 90]) color("Silver") cylinder(d=5, h=350, $fn=res);
+translate([14+27, 26+52, -61.5]) heatbed();
 translate([-42, -23, -80]) profileI5(132);
 translate([-32, -13, -14]) rotate([90, 0, 90]) XY_bearing_holder();
 translate([-32, -13, 32]) rotate([-90, 0, 0]) XY_bearing_holder();
@@ -36,6 +36,6 @@ module air_channel() {
 }
 
 // Head parts
-translate([14+head_pos_x, 26+head_pos_y, -7.8]) jhead_hotend();
-translate([4+head_pos_x, 15+head_pos_y, 0]) {head_slider(); head_slider_clamp();}
-translate([-15+head_pos_x, -15+head_pos_y, -5]) {fan40mm();}
+translate([14+27+head_pos_x, 26+52+head_pos_y, -7.8]) jhead_hotend();
+translate([4+27+head_pos_x, 15+52+head_pos_y, 0]) {head_slider(); head_slider_clamp();}
+translate([-15+27+head_pos_x, -15+52+head_pos_y, -5]) {fan40mm();}

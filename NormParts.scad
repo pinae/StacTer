@@ -41,11 +41,12 @@ module pulley60teeth(inner_d) {
     color("Silver") render(convexity=4) {
         difference() {
             union() {
-                cylinder(d=45, h=8, $fn=res);
-                cylinder(d=42, h=15.95, $fn=res);
-                translate([0, 0, 15]) cylinder(d=45, h=0.95, $fn=res);
+                cylinder(d=25, h=7.5, $fn=res);
+                translate([0, 0, 7.5]) cylinder(d=36, h=10.5, $fn=res);
+                translate([0, 0, 7.5]) cylinder(d=42, h=1.5, $fn=res);
+                translate([0, 0, 16.5]) cylinder(d=42, h=1.5, $fn=res);
             }
-            translate([0, 0, -1]) cylinder(d=inner_d, h=15.95+2, $fn=res);
+            translate([0, 0, -1]) cylinder(d=inner_d, h=18+2, $fn=res);
         }
     }
 }
