@@ -3,10 +3,11 @@ use <Stamps.scad>
 use <Profiles.scad>
 use <Slider.scad>
 use <Bearing_holders.scad>
+use <Motor_holders.scad>
 res = 64;
 
-head_pos_x = 220;
-head_pos_y = 220;
+head_pos_x = 0;
+head_pos_y = 0;
 
 module slider() {
     alu_fitting();
@@ -17,11 +18,12 @@ module slider() {
     }
 }
 
+//back right
 translate([head_pos_x+4+27, 0, 0]) slider();
-translate([-68.5, 0, 0]) rotate([0, 90, 0]) color("Silver") cylinder(d=8, h=400, $fn=res);
+translate([-71, 0, 0]) rotate([0, 90, 0]) color("Silver") cylinder(d=8, h=400, $fn=res);
 translate([-39, 0, 0]) rotate([0, 90, 0]) ballbearing608();
 translate([-31, 0, 0]) rotate([0, 90, 0]) pulley20teeth(8);
-translate([-19, -35, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=8, h=400, $fn=res);
+translate([-19, -49, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=8, h=400, $fn=res);
 translate([-19, -20, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([-19, -12, 18]) rotate([0, 90, 90]) pulley20teeth(8);
 translate([4+27+head_pos_x, -20+11, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=5, h=350, $fn=res);
@@ -31,6 +33,13 @@ translate([-42, -23, -80]) profileI5(132);
 translate([-32, -13, -14]) rotate([90, 0, 90]) XY_bearing_holder();
 translate([-32, -13, 32]) rotate([-90, 0, 0]) XY_bearing_holder();
 translate([-52.5, 0, 0]) rotate([0, -90, 0]) pulley60teeth(8);
+translate([-93, -12, -40]) rotate([0, -90, 180]) color("Blue") import("Motor_NEMA17.stl", convexity=6);
+translate([-53.5, -12, -40]) rotate([0, -90, 0]) pulley20teeth(5);
+translate([-52, -12, -40]) rotate([0, 90, 180]) Xmotor_holder();
+translate([-19, -33.5, 18]) rotate([90, 0, 0]) pulley60teeth(8);
+translate([-31, -74, -22]) rotate([0, -90, -90]) color("Blue") import("Motor_NEMA17.stl", convexity=6);
+translate([-31, -34.75, -22]) rotate([0, -90, 90]) pulley20teeth(5);
+translate([-31, -33, -22]) rotate([0, -90, 90]) Ymotor_holder();
 
 // front left
 translate([311.5, -13, -14+28]) rotate([-90, 0, 90]) XY_bearing_holder();
@@ -61,6 +70,7 @@ translate([-31, 332, 0]) rotate([0, 90, 0]) pulley20teeth(8);
 translate([-42, 355, -80]) profileI5(132);
 translate([-32, 345, 32-28]) rotate([90, 0, 0]) XY_bearing_holder();
 translate([-19, 345, 18]) rotate([0, 90, 90]) ballbearing608();
+translate([-19, 343.5, 18]) rotate([0, -90, 90]) pulley20teeth(8);
 translate([-19, 15+52+head_pos_y, 18]) rotate([180, 0, 90]) slider();
 
 
