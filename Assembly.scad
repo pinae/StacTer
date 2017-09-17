@@ -4,10 +4,11 @@ use <Profiles.scad>
 use <Slider.scad>
 use <Bearing_holders.scad>
 use <Motor_holders.scad>
+use <Profile_connectors.scad>
 res = 64;
 
-head_pos_x = 0;
-head_pos_y = 0;
+head_pos_x = 190;
+head_pos_y = 120;
 
 module slider() {
     alu_fitting();
@@ -28,8 +29,7 @@ translate([-19, -20, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([-19, -12, 18]) rotate([0, 90, 90]) pulley20teeth(8);
 translate([4+27+head_pos_x, -20+11, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=5, h=350, $fn=res);
 translate([-39+11, 15+52+head_pos_y, 0]) rotate([90, 0, 90]) color("Silver") cylinder(d=5, h=350, $fn=res);
-translate([14+27, 26+52, -61.5]) heatbed();
-translate([-42, -23, -80]) profileI5(132);
+translate([-42, -23, -365]) profileI5(450);
 translate([-32, -13, -14]) rotate([90, 0, 90]) XY_bearing_holder();
 translate([-32, -13, 32]) rotate([-90, 0, 0]) XY_bearing_holder();
 translate([-52.5, 0, 0]) rotate([0, -90, 0]) pulley60teeth(8);
@@ -45,7 +45,7 @@ translate([-31, -33, -22]) rotate([0, -90, 90]) Ymotor_holder();
 translate([311.5, -13, -14+28]) rotate([-90, 0, 90]) XY_bearing_holder();
 translate([311.5, 0, 0]) rotate([0, 90, 0]) ballbearing608();
 translate([310.5, 0, 0]) rotate([0, -90, 0]) pulley20teeth(8);
-translate([321.5, -23, -80]) profileI5(132);
+translate([321.5, -23, -365]) profileI5(450);
 translate([311.5, -13, 32-28]) rotate([90, 0, 180]) XY_bearing_holder();
 translate([298.5, -20, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([298.5, -35, 18]) rotate([0, 90, 90]) color("Silver") cylinder(d=8, h=400, $fn=res);
@@ -57,7 +57,7 @@ translate([4+27+head_pos_x, 332, 0]) slider();
 translate([311.5, 345, -14]) rotate([-90, 180, 90]) XY_bearing_holder();
 translate([311.5, 332, 0]) rotate([0, 90, 0]) ballbearing608();
 translate([310.5, 332, 0]) rotate([0, -90, 0]) pulley20teeth(8);
-translate([321.5, 355, -80]) profileI5(132);
+translate([321.5, 355, -365]) profileI5(450);
 translate([311.5, 345, 32]) rotate([-90, 0, 180]) XY_bearing_holder();
 translate([298.5, 345, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([298.5, 343.5, 18]) rotate([0, -90, 90]) pulley20teeth(8);
@@ -67,11 +67,36 @@ translate([298.5, 15+52+head_pos_y, 18]) rotate([180, 0, 90]) slider();
 translate([-32, 345, -14+28]) rotate([-90, 0, -90]) XY_bearing_holder();
 translate([-39, 332, 0]) rotate([0, 90, 0]) ballbearing608();
 translate([-31, 332, 0]) rotate([0, 90, 0]) pulley20teeth(8);
-translate([-42, 355, -80]) profileI5(132);
+translate([-42, 355, -365]) profileI5(450);
 translate([-32, 345, 32-28]) rotate([90, 0, 0]) XY_bearing_holder();
 translate([-19, 345, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([-19, 343.5, 18]) rotate([0, -90, 90]) pulley20teeth(8);
 translate([-19, 15+52+head_pos_y, 18]) rotate([180, 0, 90]) slider();
+
+// z axis
+translate([14+27, 26+52, -61.5]) heatbed();
+for(i=[0, 1]) {
+    for(j=[0, 1]) {
+        translate([i*238+31, j*238+69, -65]) {
+            rotate([180, 0, 0]) spindle();
+            translate([0, 0, -30]) rotate([180, 0, 0]) spindle_screw();
+            translate([0, 0, -7]) ballbearing608();
+            translate([0, 0, -300]) ballbearing608();
+            translate([0, 0, -7]) rotate([180, 0, 0]) pulley20teeth(8);
+            translate([-13+i*26, 14-i*28, -7]) rotate([180, 0, i*180]) XY_bearing_holder();
+            translate([-13+i*26, 14-i*28, -300]) rotate([180, 0, i*180]) XY_bearing_holder();
+        }
+    }
+    translate([8+i*284, 345, -62]) rotate([90, 0, 0]) profileI5(460);
+    translate([8+i*284, 345, -355]) rotate([90, 0, 0]) profileI5(460);
+    translate([-32, 355, -62-i*293]) rotate([90, 0, 90]) profileI5(343.5);
+    translate([292, 355, -52-i*293]) front_right_fixer();
+    translate([292, -23, -52-i*293]) front_left_fixer();
+    translate([8, 355, -52-i*293]) back_right_fixer();
+    translate([8, -3, -72-i*273]) rotate([0, (i-1)*180, 0]) back_left_fixer();
+    translate([-52, -3, -82-i*253]) rotate([0, 90, 0]) profileI5(100);
+    translate([-42, -13, -82-i*253]) rotate([-90, 0, 0]) back_left_fixer();
+}
 
 
 module air_channel() {
