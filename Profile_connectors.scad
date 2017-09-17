@@ -97,4 +97,20 @@ module back_left_fixer() {
     }
 }
 
-back_left_fixer();
+module corner() {
+    render(convexity=6) difference() {
+        rotate([90, 0, 0]) hull() {
+            for(i=[-1, 1]) {
+                rotate_extrude(angle=90, convexity=6, $fn=4*res) translate([20, i*7.5, 0]) circle(d=5, $fn=res);
+            }
+        }
+        translate([-50, -50, -50]) cube([100, 100, 50]);
+        translate([-50, -50, -50]) cube([50, 100, 100]);
+        translate([10, 0, -1]) cylinder(d=4.5, h=50, $fn=res);
+        translate([10, 0, 5]) cylinder(d=10, h=50, $fn=res);
+        translate([-1, 0, 15]) rotate([0, 90, 0]) cylinder(d=4.5, h=50, $fn=res);
+        translate([5, 0, 15]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
+        translate([10, -5, 15]) cube([50, 10, 50]);
+    }
+}
+corner();

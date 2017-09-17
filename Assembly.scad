@@ -86,9 +86,10 @@ for(i=[0, 1]) {
             translate([-13+i*26, 14-i*28, -7]) rotate([180, 0, i*180]) XY_bearing_holder();
             translate([-13+i*26, 14-i*28, -300]) rotate([180, 0, i*180]) XY_bearing_holder();
         }
+        translate([18+j*264, -75, -62-i*293]) rotate([-90, 0, j*90]) corner();
     }
-    translate([8+i*284, 345, -62]) rotate([90, 0, 0]) profileI5(460);
-    translate([8+i*284, 345, -355]) rotate([90, 0, 0]) profileI5(460);
+    translate([8+i*284, 345, -62]) rotate([90, 0, 0]) profileI5(440);
+    translate([8+i*284, 345, -355]) rotate([90, 0, 0]) profileI5(440);
     translate([-32, 355, -62-i*293]) rotate([90, 0, 90]) profileI5(343.5);
     translate([292, 355, -52-i*293]) front_right_fixer();
     translate([292, -23, -52-i*293]) front_left_fixer();
@@ -96,6 +97,7 @@ for(i=[0, 1]) {
     translate([8, -3, -72-i*273]) rotate([0, (i-1)*180, 0]) back_left_fixer();
     translate([-52, -3, -82-i*253]) rotate([0, 90, 0]) profileI5(100);
     translate([-42, -13, -82-i*253]) rotate([-90, 0, 0]) back_left_fixer();
+    translate([18, -85, -62-i*293]) rotate([90, 0, 90]) profileI5(264);
 }
 
 
