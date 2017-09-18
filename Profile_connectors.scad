@@ -113,4 +113,3 @@ module corner() {
         translate([10, -5, 15]) cube([50, 10, 50]);
     }
 }
-corner();
