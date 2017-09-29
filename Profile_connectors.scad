@@ -9,12 +9,12 @@ module front_right_fixer() {
             }
             translate([0, -10, 0]) cube([19.5, 20, 20]);
         }
-        translate([0, 0, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([0, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, 0, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([0, -23, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([0, -23, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, -23, 5]) cylinder(d=10, h=22, $fn=res);
         translate([14.5, 0, 10]) rotate([0, -90, 0]) cylinder(d=10, h=27, $fn=res);
-        translate([20, 0, 10]) rotate([0, -90, 0]) cylinder(d=4.5, h=27, $fn=res);
+        translate([20, 0, 10]) rotate([0, -90, 0]) cylinder(d=5.5, h=27, $fn=res);
         translate([0, -5, 10]) cube([14.5, 10, 20]);
     }
 }
@@ -32,14 +32,14 @@ module front_left_fixer() {
             }
             translate([0, -10, 0]) cube([19.5, 20, 20]);
         }
-        translate([0, 0, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([0, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, 0, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([0, -23, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([0, -23, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, -23, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([0, 23, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([0, 23, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, 23, 5]) cylinder(d=10, h=22, $fn=res);
         translate([14.5, 0, 10]) rotate([0, -90, 0]) cylinder(d=10, h=27, $fn=res);
-        translate([20, 0, 10]) rotate([0, -90, 0]) cylinder(d=4.5, h=27, $fn=res);
+        translate([20, 0, 10]) rotate([0, -90, 0]) cylinder(d=5.5, h=27, $fn=res);
         translate([0, -5, 10]) cube([14.5, 10, 20]);
     }
 }
@@ -53,14 +53,14 @@ module back_right_fixer() {
             }
             translate([-40, -10, 0]) cube([40, 20, 20]);
         }
-        translate([0, 0, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([0, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, 0, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([0, -23, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([0, -23, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, -23, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([-25, 0, -1]) cylinder(d=4.5, h=22, $fn=res);
+        translate([-25, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([-25, 0, 5]) cylinder(d=10, h=22, $fn=res);
         translate([-35, 0, 10]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
-        translate([-41, 0, 10]) rotate([0, 90, 0]) cylinder(d=4.5, h=50, $fn=res);
+        translate([-41, 0, 10]) rotate([0, 90, 0]) cylinder(d=5.5, h=50, $fn=res);
         translate([-35, -5, 10]) cube([35, 10, 20]);
     }
 }
@@ -87,9 +87,9 @@ module back_left_fixer() {
         translate([-11, -9, 18.5]) cube([22, 18, 2]);
         for(i=[-1, 1]) {
             translate([-11, i*9, 19.5]) rotate([0, 90, 0]) cylinder(d=2, h=22, $fn=res);
-            translate([0, i*25, -1]) cylinder(d=4.5, h=50, $fn=res);
+            translate([0, i*25, -1]) cylinder(d=5.5, h=50, $fn=res);
             translate([0, i*25, 5]) cylinder(d=10, h=50, $fn=res);
-            translate([0, 0, 10]) rotate([i*90, 0, 0]) cylinder(d=4.5, h=50, $fn=res);
+            translate([0, 0, 10]) rotate([i*90, 0, 0]) cylinder(d=5.5, h=50, $fn=res);
             translate([0, i*15, 10]) rotate([i*-90, 0, 0]) cylinder(d=10, h=50, $fn=res);
             translate([i*5, i*-20, 10]) rotate([0, 0, (i+1)*90]) cube([10, 50, 50]);
             translate([0, i*20, 10]) cylinder(d=10, h=50, $fn=res);
@@ -106,9 +106,9 @@ module corner() {
         }
         translate([-50, -50, -50]) cube([100, 100, 50]);
         translate([-50, -50, -50]) cube([50, 100, 100]);
-        translate([10, 0, -1]) cylinder(d=4.5, h=50, $fn=res);
+        translate([10, 0, -1]) cylinder(d=5.5, h=50, $fn=res);
         translate([10, 0, 5]) cylinder(d=10, h=50, $fn=res);
-        translate([-1, 0, 15]) rotate([0, 90, 0]) cylinder(d=4.5, h=50, $fn=res);
+        translate([-1, 0, 15]) rotate([0, 90, 0]) cylinder(d=5.5, h=50, $fn=res);
         translate([5, 0, 15]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
         translate([10, -5, 15]) cube([50, 10, 50]);
     }

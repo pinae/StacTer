@@ -117,6 +117,17 @@ module ballbearing608() {
     }
 }
 
+module axialBallbearing() {
+    color("Silver") render(convexity=4) difference() {
+        union() {
+            cylinder(d=16, h=1.3, $fn=res);
+            translate([0, 0, 1.3]) cylinder(d=15.72, d2=15.3, h=5-2*1.3, $fn=res);
+            translate([0, 0, 5-1.3]) cylinder(d=16, h=1.3, $fn=res);
+        }
+        translate([0, 0, -1]) cylinder(d=8, h=7, $fn=res);
+    }
+}
+
 module fan40mm() {
     color("DarkGray") render(convexity=6) difference() {
         union() {
