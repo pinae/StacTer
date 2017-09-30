@@ -5,6 +5,7 @@ use <Slider.scad>
 use <Bearing_holders.scad>
 use <Motor_holders.scad>
 use <Profile_connectors.scad>
+use <BeltTensioners.scad>
 res = 64;
 
 head_pos_x = 190;
@@ -99,6 +100,14 @@ for(i=[0, 1]) {
     translate([-42, -13, -82-i*253]) rotate([-90, 0, 0]) back_left_fixer();
     translate([18, -85, -62-i*293]) rotate([90, 0, 90]) profileI5(264);
 }
+translate([-3, 300, -72]) rotate([0, 180, -90]) Zmotor_holder();
+translate([-3, 300, -113.5]) rotate([0, 0, 90]) color("Blue") import("Motor_NEMA17.stl", convexity=6);
+translate([-3, 300, -95]) rotate([0, 0, 90]) pulley20teeth(5);
+translate([13, 245, -87]) ballbearing608();
+translate([13, 195, -87]) ballbearing608();
+translate([1, 222, -87]) ballbearing608();
+translate([8, 220, -72]) Z_belt_tensioner_base();
+translate([8, 220, -72-15.2]) Z_belt_tensioner_closer();
 
 
 module air_channel() {
