@@ -20,7 +20,7 @@ module Xmotor_holder() {
             for(j=[-1, 1]) {
                 translate([i*15.5, j*15.5, -1]) {
                     cylinder(d=3.5, h=41, $fn=res);
-                    cylinder(d=6.3, h=21, $fn=res);
+                    cylinder(d=6.5, h=21, $fn=res);
                 }
             }
             translate([i*48.5, -6.5-5, 18]) cube([55, 55, 26], center=true);
@@ -56,7 +56,7 @@ module Zmotor_holder() {
             for(j=[-1, 1]) {
                 translate([i*15.5, j*15.5, -1]) {
                     cylinder(d=3.5, h=41, $fn=res);
-                    cylinder(d=6.3, h=21, $fn=res);
+                    cylinder(d=6.5, h=21, $fn=res);
                 }
             }
             translate([i*48.5, -6.5-5, 18]) cube([55, 55, 26], center=true);
@@ -69,4 +69,4 @@ module Zmotor_holder() {
 }
 
 //translate([0, 0, 41]) rotate([180, 0, 0]) color("Blue") import("Motor_NEMA17.stl", convexity=6);
-Ymotor_holder();
+Zmotor_holder();

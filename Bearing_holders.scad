@@ -17,7 +17,7 @@ module XY_bearing_holder() {
             translate([0, -13, -20]) cube([20, 20+2*17, 5]);
         }
         translate([-10, -1, -21]) cube([10, 30, 22]);
-        translate([13, 14, -7]) cylinder(d=22.6, h=19, $fn=res);
+        translate([13, 14, -7]) cylinder(d=22.2, h=19, $fn=res);
         translate([13, 14, -21]) cylinder(d=19, h=22, $fn=res);
         for(i=[-1, 1]) {
             translate([-1, 20*i+14, -10]) rotate([0, 90, 0]) cylinder(d=5.5, h=22, $fn=res);
@@ -44,9 +44,9 @@ module Z_bearing_holder() {
             translate([0, -13, -20]) cube([20, 20+2*17, 5]);
         }
         translate([-10, -1, -21]) cube([10, 30, 22]);
-        translate([13, 14, -7]) cylinder(d=22.6, h=19, $fn=res);
+        translate([13, 14, -7]) cylinder(d=22.2, h=19, $fn=res);
         translate([13, 14, -16.7]) cylinder(d=18, h=22, $fn=res);
-        translate([13, 14, -18]) cylinder(d=16.5, h=22, $fn=res);
+        translate([13, 14, -18]) cylinder(d=16.2, h=22, $fn=res);
         translate([13, 14, -21]) cylinder(d=9, h=22, $fn=res);
         for(i=[-1, 1]) {
             translate([-1, 20*i+14, -10]) rotate([0, 90, 0]) cylinder(d=5.5, h=22, $fn=res);
