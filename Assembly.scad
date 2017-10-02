@@ -6,6 +6,7 @@ use <Bearing_holders.scad>
 use <Motor_holders.scad>
 use <Profile_connectors.scad>
 use <BeltTensioners.scad>
+use <SupportBrackets.scad>
 res = 64;
 
 head_pos_x = 190;
@@ -63,6 +64,7 @@ translate([311.5, 345, 32]) rotate([-90, 0, 180]) XY_bearing_holder();
 translate([298.5, 345, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([298.5, 343.5, 18]) rotate([0, -90, 90]) pulley20teeth(8);
 translate([298.5, 15+52+head_pos_y, 18]) rotate([180, 0, 90]) slider();
+translate([331.5, 345, -365]) rotate([90, 0, -90]) Bracket90degreesSupport_frontRight();
 
 // back right
 translate([-32, 345, -14+28]) rotate([-90, 0, -90]) XY_bearing_holder();
@@ -73,6 +75,7 @@ translate([-32, 345, 32-28]) rotate([90, 0, 0]) XY_bearing_holder();
 translate([-19, 345, 18]) rotate([0, 90, 90]) ballbearing608();
 translate([-19, 343.5, 18]) rotate([0, -90, 90]) pulley20teeth(8);
 translate([-19, 15+52+head_pos_y, 18]) rotate([180, 0, 90]) slider();
+translate([-32, 345, -365]) rotate([90, 0, -90]) Bracket90degreesSupport_backRight();
 
 // z axis
 translate([14+27, 26+52, -61.5]) heatbed();
