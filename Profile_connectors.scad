@@ -4,18 +4,22 @@ module front_right_fixer() {
     render(convexity=6) difference() {
         union() {
             hull() {
-                cylinder(d=20, h=20, $fn=res);
-                translate([0, -23, 0]) cylinder(d=20, h=5, $fn=res);
+                cylinder(d=20, h=50, $fn=res);
+                translate([0, -43, 0]) cylinder(d=20, h=5, $fn=res);
             }
-            translate([0, -10, 0]) cube([19.5, 20, 20]);
+            translate([0, -10, 0]) cube([19.5, 20, 50]);
         }
-        translate([0, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
-        translate([0, 0, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([0, -23, -1]) cylinder(d=5.5, h=22, $fn=res);
-        translate([0, -23, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([14.5, 0, 10]) rotate([0, -90, 0]) cylinder(d=10, h=27, $fn=res);
-        translate([20, 0, 10]) rotate([0, -90, 0]) cylinder(d=5.5, h=27, $fn=res);
-        translate([0, -5, 10]) cube([14.5, 10, 20]);
+        translate([0, 0, -1]) cylinder(d=5.3, h=52, $fn=res);
+        translate([0, 0, 5]) cylinder(d=10, h=52, $fn=res);
+        translate([0, -43, -1]) cylinder(d=5.3, h=52, $fn=res);
+        translate([0, -43, 5]) cylinder(d=10, h=52, $fn=res);
+        translate([0, -23, -1]) cylinder(d=5.3, h=52, $fn=res);
+        translate([0, -23, 5]) cylinder(d=10, h=52, $fn=res);
+        translate([14.5, 0, 15]) rotate([0, -90, 0]) cylinder(d=10, h=27, $fn=res);
+        translate([20, 0, 15]) rotate([0, -90, 0]) cylinder(d=5.3, h=27, $fn=res);
+        translate([14.5, 0, 42]) rotate([0, -90, 0]) cylinder(d=10, h=27, $fn=res);
+        translate([20, 0, 42]) rotate([0, -90, 0]) cylinder(d=5.3, h=27, $fn=res);
+        translate([0, -5, 15]) cube([14.5, 10, 50]);
     }
 }
 
@@ -23,14 +27,14 @@ module front_left_fixer() {
     render(convexity=6) difference() {
         union() {
             hull() {
-                cylinder(d=20, h=20, $fn=res);
+                cylinder(d=20, h=25, $fn=res);
                 translate([0, -23, 0]) cylinder(d=20, h=5, $fn=res);
             }
             hull() {
-                cylinder(d=20, h=20, $fn=res);
+                cylinder(d=20, h=25, $fn=res);
                 translate([0, 23, 0]) cylinder(d=20, h=5, $fn=res);
             }
-            translate([0, -10, 0]) cube([19.5, 20, 20]);
+            translate([0, -10, 0]) cube([19.5, 20, 25]);
         }
         translate([0, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, 0, 5]) cylinder(d=10, h=22, $fn=res);
@@ -38,30 +42,36 @@ module front_left_fixer() {
         translate([0, -23, 5]) cylinder(d=10, h=22, $fn=res);
         translate([0, 23, -1]) cylinder(d=5.5, h=22, $fn=res);
         translate([0, 23, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([14.5, 0, 10]) rotate([0, -90, 0]) cylinder(d=10, h=27, $fn=res);
-        translate([20, 0, 10]) rotate([0, -90, 0]) cylinder(d=5.5, h=27, $fn=res);
-        translate([0, -5, 10]) cube([14.5, 10, 20]);
+        translate([14.5, 0, 15]) rotate([0, -90, 0]) cylinder(d=10, h=27, $fn=res);
+        translate([20, 0, 15]) rotate([0, -90, 0]) cylinder(d=5.5, h=27, $fn=res);
+        translate([0, -5, 15]) cube([14.5, 10, 20]);
     }
 }
 
-module back_right_fixer() {
+module back_right_fixer(high) {
     render(convexity=6) difference() {
         union() {
             hull() {
-                cylinder(d=20, h=20, $fn=res);
-                translate([0, -23, 0]) cylinder(d=20, h=5, $fn=res);
+                cylinder(d=20, h=high ? 45 : 22, $fn=res);
+                translate([0, -43, 0]) cylinder(d=20, h=5, $fn=res);
             }
-            translate([-40, -10, 0]) cube([40, 20, 20]);
+            translate([-40, -10, 0]) cube([40, 20, high ? 45 : 22]);
         }
-        translate([0, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
-        translate([0, 0, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([0, -23, -1]) cylinder(d=5.5, h=22, $fn=res);
-        translate([0, -23, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([-25, 0, -1]) cylinder(d=5.5, h=22, $fn=res);
-        translate([-25, 0, 5]) cylinder(d=10, h=22, $fn=res);
-        translate([-35, 0, 10]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
-        translate([-41, 0, 10]) rotate([0, 90, 0]) cylinder(d=5.5, h=50, $fn=res);
-        translate([-35, -5, 10]) cube([35, 10, 20]);
+        translate([0, 0, -1]) cylinder(d=5.5, h=52, $fn=res);
+        translate([0, 0, 5]) cylinder(d=10, h=52, $fn=res);
+        translate([0, -23, -1]) cylinder(d=5.5, h=52, $fn=res);
+        translate([0, -23, 5]) cylinder(d=10, h=52, $fn=res);
+        translate([0, -43, -1]) cylinder(d=5.5, h=52, $fn=res);
+        translate([0, -43, 5]) cylinder(d=10, h=52, $fn=res);
+        translate([-25, 0, -1]) cylinder(d=5.5, h=52, $fn=res);
+        translate([-25, 0, 5]) cylinder(d=10, h=52, $fn=res);
+        translate([-35, 0, 15]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
+        translate([-41, 0, 15]) rotate([0, 90, 0]) cylinder(d=5.5, h=50, $fn=res);
+        if (high) {
+            translate([-35, 0, 35]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
+            translate([-41, 0, 35]) rotate([0, 90, 0]) cylinder(d=5.5, h=50, $fn=res);
+        }
+        translate([-35, -5, 15]) cube([35, 10, 50]);
     }
 }
 
@@ -101,15 +111,18 @@ module corner() {
     render(convexity=6) difference() {
         rotate([90, 0, 0]) hull() {
             for(i=[-1, 1]) {
-                rotate_extrude(angle=90, convexity=6, $fn=4*res) translate([20, i*7.5, 0]) circle(d=5, $fn=res);
+                rotate_extrude(angle=90, convexity=6, $fn=4*res) translate([24.5, i*7.5, 0]) circle(d=5, $fn=res);
             }
         }
         translate([-50, -50, -50]) cube([100, 100, 50]);
         translate([-50, -50, -50]) cube([50, 100, 100]);
-        translate([10, 0, -1]) cylinder(d=5.5, h=50, $fn=res);
-        translate([10, 0, 5]) cylinder(d=10, h=50, $fn=res);
-        translate([-1, 0, 15]) rotate([0, 90, 0]) cylinder(d=5.5, h=50, $fn=res);
-        translate([5, 0, 15]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
-        translate([10, -5, 15]) cube([50, 10, 50]);
+        translate([16, 0, -1]) cylinder(d=5.3, h=50, $fn=res);
+        translate([16, 0, 5]) cylinder(d=10, h=50, $fn=res);
+        translate([10, 0, 16]) cylinder(d=10, h=50, $fn=res);
+        translate([-1, 0, 16]) rotate([0, 90, 0]) cylinder(d=5.3, h=50, $fn=res);
+        translate([5, 0, 16]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
+        translate([16, 0, 10]) rotate([0, 90, 0]) cylinder(d=10, h=50, $fn=res);
+        translate([10, -5, 16]) cube([50, 10, 50]);
+        translate([16, -5, 10]) cube([50, 10, 50]);
     }
 }
