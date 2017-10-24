@@ -19,16 +19,16 @@ module rod_fitting_lower() {
         difference() {
             union() {
                 translate([0, 0, 2.5]) cube([28, 18, 5], center=true);
-                translate([0, 0, 7]) cube([5, 18, 10], center=true);
+                translate([0, 0, 7]) cube([6, 18, 10], center=true);
                 for(i=[-1, 1]) {
                     for(j=[-1, 1]) {
                         translate([j*9, i*7, 0]) cylinder(d=6.3+3.5, h=5, $fn=6);
                     }
                 }
             }
-            translate([0, -9, 12]) rotate([-90, 0, 0]) cylinder(d=5, h=20, $fn=res);
-            translate([-3.5, 0, 5]) rotate([0, 0, 180]) belt_stamp(7);
-            translate([3.5, 0, 5]) rotate([0, 0, 0]) belt_stamp(7);
+            translate([0, -9, 12]) rotate([-90, 0, 0]) cylinder(d=6, h=20, $fn=res);
+            translate([-3.9, 0, 5]) rotate([0, 0, 180]) belt_stamp(7);
+            translate([3.9, 0, 5]) rotate([0, 0, 0]) belt_stamp(7);
             for(i=[-1, 1]) {
                 for(j=[-1, 1]) {
                     translate([j*9, i*7, -1]) cylinder(d=3, h=7, $fn=res);
@@ -54,14 +54,14 @@ module rod_fitting_upper() {
                     }
                 }
             }
-            translate([0, 0, 7]) cube([5, 20, 10], center=true);
+            translate([0, 0, 7]) cube([6, 20, 10], center=true);
             for(i=[-1, 1]) {
                 for(j=[-1, 1]) {
                     translate([j*9, i*7, 4.5]) cylinder(d=3, h=14, $fn=res);
                     translate([j*9, i*7, 5+7.5]) cylinder(d=5.5, h=10, $fn=res);
                 }
             }
-            translate([0, -9, 12]) rotate([-90, 0, 0]) cylinder(d=5, h=20, $fn=res);
+            translate([0, -9, 12]) rotate([-90, 0, 0]) cylinder(d=6, h=20, $fn=res);
             translate([-3.5, 0, 5]) rotate([0, 0, 180]) belt_stamp(7);
             translate([3.5, 0, 5]) rotate([0, 0, 0]) belt_stamp(7);
         }
